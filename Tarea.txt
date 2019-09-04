@@ -11,6 +11,40 @@ typedef struct nodo_s{
 typedef nodo_t *ptrNodo;
 typedef nodo_t *ptrPila;
 
+void push(ptrPila *pila, int x){
+    ptrNodo nd;
+    nd = (ptrNodo)malloc(sizeof(nodo_t));
+    if (nd != NULL){
+        nd -> dato = x;
+        nd -> siguiente = *pila;
+        *pila = nd;
+    }
+}
+
+struct nodo{
+    int dato;
+    struct nodo *sgte;
+    struct nodo *inicio;
+};
+
+void mostrarCola(){
+    nodo *inicio;
+    nodo *temp = inicio;
+    if(!inicio){
+       cout << "Cola vacia" << endl;
+   }else{
+       while(temp){
+            cout << temp -> dato << ", ";
+            temp = temp -> sgte;
+       }
+   }
+}
+
+struct cola{
+    nodo *ultimo;
+    nodo *primero;
+};
+
 int main()
 {
 
