@@ -67,6 +67,56 @@ int denqueue(struct cola &q){
     return num;
 }
 
+void invertirCola(struct cola c1, ptrNodo np){
+    struct nodo *a1;
+    a1 = c1.ultimo;
+    cout << "Cola Normal: ";
+    while(a1 != NULL){
+        cout << a1 -> dato << ", ";
+        a1 = a1 -> sgte;
+    }
+    a1 = c1.ultimo;
+    while(c1.ultimo != NULL){
+        a1 = c1.ultimo;
+        push(&np, a1 -> dato);
+        c1.ultimo = a1 -> sgte;
+        delete(a1);
+    }
+    c1.ultimo = NULL;
+    c1.primero = NULL;
+    while(np != NULL){
+        enqueue(c1, np -> dato);
+        np = np -> siguiente;
+    }
+    a1 = c1.ultimo;
+    cout << "\nCola invertida: ";
+    while(a1 != NULL){
+        cout << a1 -> dato << ", ";
+        a1 = a1 -> sgte;
+    }
+    a1 = c1.ultimo;
+    cout << "\nPromedio: ";
+    int prom = 0;
+    int cont = 0;
+    while(a1 != NULL){
+        prom = prom + (a1 -> dato);
+        cont = cont + 1;
+        a1 = a1 -> sgte;
+    }
+    prom = (prom/cont);
+    cout << prom;
+    a1 = c1.ultimo;
+    cout << "\nMultiplos del promedio: ";
+    while(a1 != NULL){
+        if(((a1 -> dato)%prom) == 0 ){
+            struct cola c2;
+            enqueue(c2, (a1 -> dato));
+            cout << a1 -> dato << ", ";
+        }
+        a1 = a1 -> sgte;
+    }
+}
+
 int main()
 {
 
