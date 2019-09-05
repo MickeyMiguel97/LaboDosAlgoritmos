@@ -120,4 +120,16 @@ void invertirCola(struct cola c1, ptrNodo np){
 int main()
 {
 
+struct cola c1;
+    ptrPila pila = NULL;
+    c1.ultimo = NULL;
+    c1.primero = NULL;
+    enqueue(c1, 1);
+    enqueue(c1, 3);
+    enqueue(c1, 5);
+    enqueue(c1, 7);
+    enqueue(c1, 9);
+    invertirCola(c1, pila);
+    cout << "\nLiiiiiisto";
+
 }
