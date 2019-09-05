@@ -45,6 +45,28 @@ struct cola{
     nodo *primero;
 };
 
+void enqueue(struct cola &q, int valor){
+   struct nodo *aux = new(struct nodo);
+   aux -> dato = valor;
+   aux -> sgte = NULL;
+   if(q.ultimo == NULL){
+       q.ultimo = aux;
+   }else{
+       (q.primero) -> sgte = aux;
+   }
+   q.primero = aux;
+}
+
+int denqueue(struct cola &q){
+    int num;
+    struct nodo *aux;
+    aux = q.ultimo;
+    num = aux -> dato;
+    q.ultimo = (q.ultimo) -> sgte;
+    delete(aux);
+    return num;
+}
+
 int main()
 {
 
