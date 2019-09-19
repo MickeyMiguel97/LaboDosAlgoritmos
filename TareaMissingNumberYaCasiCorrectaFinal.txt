@@ -66,4 +66,14 @@ heapSort(arr, n);
 arry[v] = arr[x-1];
 v = v + 1;
 }//for grande
+for(int a = 0; a < y; a++)
+if (arry[a]%2 == 0){
+    cout << "Missing number= "; 
+    cout << (arry[a]+2);
+    cout << " \n";
+}else{
+    cout << "Missing number= ";
+    cout << (arry[a]+1);
+    cout << " \n";
+}// else
 }// main
