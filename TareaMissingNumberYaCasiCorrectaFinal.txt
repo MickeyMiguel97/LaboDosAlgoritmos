@@ -51,4 +51,19 @@ int v;
 cout << "Escriba el # de arreglos: ";
 cin >> y;
 int arry[y];
+for(int j = 0; j < y; j++){
+    cout << "Escriba el # de datos del arreglo ";
+    cout << (j+1);
+    cout << " = ";
+cin >> x;
+int arr[x];
+for(int i = 0; i < x; i++){
+    cin >> z;
+    arr[i] = z;
+}
+int n = sizeof(arr) / sizeof(arr[0]);
+heapSort(arr, n);
+arry[v] = arr[x-1];
+v = v + 1;
+}//for grande
 }// main
