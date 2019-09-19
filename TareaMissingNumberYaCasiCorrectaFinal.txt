@@ -44,5 +44,11 @@ cout << "\n";
 // Código principal para utilizarlo
 int main()
 {
-
+int x;
+int y;
+int z;
+int v;
+cout << "Escriba el # de arreglos: ";
+cin >> y;
+int arry[y];
 }// main
